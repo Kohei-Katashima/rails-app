@@ -15,11 +15,17 @@
     <%= render "layouts/header" %>
 
     <% if flash[:notice] %>
-      <p class="notice"><%= notice %></p>
+      <script type="text/javascript">
+        toastr.options.positionClass = 'toast-bottom-right';
+        toastr.success("<%= notice %>")
+      </script>
     <% end %>
 
     <% if flash[:alert] %>
-      <p class="alert"><%= alert %></p>
+      <script type="text/javascript">
+        toastr.options.positionClass = 'toast-top-center';
+        toastr.error("<%= alert %>")
+      </script>
     <% end %>
 
     <%= yield %>
