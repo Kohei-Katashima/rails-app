@@ -2,7 +2,9 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">固定ナビゲーションバー</a>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <h1>チャットアプリ</h1>
+      <% end %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,10 +14,13 @@
             <a class="nav-link" aria-current="page" href="#">ホーム</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">リンク</a>
+            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">無効</a>
+            <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
         </ul>
         <form class="d-flex">

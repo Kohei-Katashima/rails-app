@@ -60,3 +60,5 @@ gem 'devise-i18n-views'
 gem 'dotenv-rails'
 # デバッグツール
 gem 'pry-rails'
+
+gem 'redis'
